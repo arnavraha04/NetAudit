@@ -1,6 +1,6 @@
 # NetAudit
 
-NetAudit is a network auditing and monitoring tool designed to analyze network security, detect vulnerabilities, and provide detailed insights into connected devices. This project demonstrates hands-on knowledge of network scanning, auditing, and security best practices, making it ideal for learning, internships, and practical experience.
+NetAudit is a network auditing and monitoring tool designed to analyze network security, detect vulnerabilities, and provide detailed insights into connected devices. This project demonstrates hands-on knowledge of network scanning, auditing, and security best practices, making it ideal for learning and practical experience.
 
 ---
 
