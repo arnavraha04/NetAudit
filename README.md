@@ -1,72 +1,58 @@
-# NetAudit
+**NetAudit**
 
-NetAudit is a network auditing and monitoring tool designed to analyze network security, detect vulnerabilities, and provide detailed insights into connected devices. This project demonstrates hands-on knowledge of network scanning, auditing, and security best practices, making it ideal for learning and practical experience.
+    NetAudit is a network auditing and monitoring tool designed to analyze network security, detect vulnerabilities, and provide detailed insights into connected devices. This project demonstrates hands-on knowledge of network scanning, auditing, and security best practices.
 
----
+## Project Features
 
-## Features
-
-- Discover active devices on a network
-- Scan open ports and services
-- Identify potential vulnerabilities
-- Generate audit reports
-- Easy-to-use command-line interface (CLI)
-
----
+    -Comprehensive Network Scanning – Scan a target IP address or domain to assess network availability.
+    
+    -Multiple Scan Techniques – Supports SYN, TCP Connect, UDP, and Ping scans for flexible analysis.
+    
+    -Port and Service Identification – Detects open ports and the services running on them.
+    
+    -Basic Risk Assessment – Provides risk levels and descriptions for detected services to highlight potential security concerns.
+    
+    -Interactive Command-Line Interface (CLI) – Simple and user-friendly interface for efficient network auditing.
 
 ## Installation
 
-1. Clone the repository:
+    1) Clone the repository:
+    
+        git clone https://github.com/arnavraha04/NetAudit.git
+        cd NetAudit
+    
+    
+    2) Install required dependencies:
+    
+        pip install -r requirements.txt
+        Make sure you have Python 3.x installed.
 
-```bash
-git clone https://github.com/arnavraha04/NetAudit.git
-cd NetAudit
-Install required dependencies:
+## Usage
+    
+    1)Run the main script:
+    
+        python netaudit.py
+    
+    2)Follow the interactive prompts to scan a network or perform risk analysis.
 
-pip install -r requirements.txt
-(Make sure you have Python 3.x installed)
+## Technologies Used
 
-Usage
-Run the main script:
+    Python 3.x
+    Socket programming
+    Network protocols (TCP/UDP)
+    Libraries: scapy, python-nmap
 
-python netaudit.py
-Follow the prompts to scan your network or generate reports.
+## Future Improvements
 
-Technologies Used
-Python 3.x
+    Add a GUI for better user experience
+    Include automated vulnerability detection
+    Support scheduled audits and logging
+    Email notifications for network alerts
 
-Socket programming
+## Contributing
 
-Network protocols (TCP/UDP)
-
-[Add any libraries used, e.g., scapy, nmap, etc.]
-
-Future Improvements
-Add GUI for better user experience
-
-Include automated vulnerability detection
-
-Support scheduled audits and logging
-
-Email notifications for network alerts
-
-Contributing
-Contributions are welcome! Please fork the repository and create a pull request with your improvements.
+  Contributions are welcome! Please fork the repository and create a pull request with your improvements.
 
 License
-This project is open-source and available under the MIT License."
 
-
----
-
-✅ **Next step:**  
-
-1. Open your terminal in the project folder:  
-```bash
-cd ~/Desktop/NetAudit
-nano README.md
-Paste everything inside nano.
-
-Save: CTRL + O → Enter
-
-Exit: CTRL + X
+This project is open-source and available under the MIT License.
