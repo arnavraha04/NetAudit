@@ -38,15 +38,21 @@
 ## Technologies Used
 
 -Python 3.x
+
 -Socket programming
+
 -Network protocols (TCP/UDP)
+
 -Libraries: scapy, python-nmap
 
 ## Future Improvements
 
 -Add a GUI for better user experience
+
 -Include automated vulnerability detection
+
 -Support scheduled audits and logging
+
 -Email notifications for network alerts
 
 ## Contributing
