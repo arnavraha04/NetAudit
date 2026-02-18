@@ -1,0 +1,100 @@
+import subprocess
+
+# Expanded Port Risk Database
+port_risks = {
+    20: ("FTP Data", "High", "FTP data transfer port, unencrypted."),
+    21: ("FTP", "High", "FTP command port, unencrypted authentication."),
+    22: ("SSH", "Low", "Secure remote login service."),
+    23: ("Telnet", "Critical", "Telnet sends credentials in plain text."),
+    25: ("SMTP", "Medium", "Mail sending service; can be exploited for spam."),
+    53: ("DNS", "Medium", "Domain name resolution service."),
+    67: ("DHCP", "Medium", "Dynamic host configuration service; can be spoofed."),
+    69: ("TFTP", "High", "Trivial file transfer; unencrypted."),
+    80: ("HTTP", "Medium", "Standard web service; unencrypted."),
+    110: ("POP3", "Medium", "Mail retrieval; may send passwords in plain text."),
+    123: ("NTP", "Low", "Network time protocol; can be abused for DDoS."),
+    143: ("IMAP", "Medium", "Mail retrieval; may send passwords in plain text."),
+    161: ("SNMP", "High", "Device management; default community strings risky."),
+    162: ("SNMP-Trap", "High", "SNMP trap; may reveal network info."),
+    443: ("HTTPS", "Low", "Secure web service."),
+    445: ("SMB", "High", "Windows file sharing; ransomware target."),
+    465: ("SMTPS", "Low", "Secure SMTP service."),
+    587: ("SMTP (TLS)", "Low", "Mail submission over TLS."),
+    636: ("LDAPS", "Low", "Secure LDAP service."),
+    993: ("IMAPS", "Low", "Secure IMAP service."),
+    995: ("POP3S", "Low", "Secure POP3 service."),
+    1433: ("MSSQL", "High", "Microsoft SQL Server; attack target."),
+    1521: ("Oracle DB", "High", "Oracle database listener."),
+    3306: ("MySQL", "High", "MySQL database service."),
+    3389: ("RDP", "High", "Remote desktop service."),
+    5060: ("SIP", "High", "VoIP signaling; can be exploited."),
+    5432: ("PostgreSQL", "High", "PostgreSQL database service."),
+    5900: ("VNC", "High", "Remote desktop/VNC service."),
+    8080: ("HTTP-Proxy", "Medium", "Alternate web or proxy service."),
+    8443: ("HTTPS-Alt", "Low", "Alternate secure web service.")
+}
+
+def get_scan_type():
+    print("\nSelect Scan Type:")
+    print("1. SYN Scan (Stealth)")
+    print("2. TCP Connect Scan")
+    print("3. UDP Scan")
+    print("4. Ping Scan")
+    choice = input("Enter choice (1-4): ")
+
+    if choice == "1":
+        return "-sS"
+    elif choice == "2":
+        return "-sT"
+    elif choice == "3":
+        return "-sU"
+    elif choice == "4":
+        return "-sn"
+    else:
+        print("Invalid choice! Using TCP Connect scan by default.")
+        return "-sT"
+
+def scan_target(target, scan_type):
+    print("\nRunning Nmap scan on:", target)
+    print("Scan type:", scan_type)
+    print("-" * 50)
+
+    try:
+        output = subprocess.check_output(["nmap", scan_type, target], text=True)
+        print(output)
+        analyze_ports(output)
+    except Exception as e:
+        print("Scan failed:", e)
+
+def analyze_ports(scan_output):
+    print("\nPort Risk Analysis")
+    print("-" * 50)
+
+    lines = scan_output.split("\n")
+    found = False
+
+    for line in lines:
+        if "/tcp" in line and "open" in line:
+            found = True
+            port_number = int(line.split("/")[0])
+
+            if port_number in port_risks:
+                service, risk, description = port_risks[port_number]
+            else:
+                service = "Unknown"
+                risk = "Unknown"
+                description = "No information available."
+
+            print(f"Port: {port_number}")
+            print(f"Service: {service}")
+            print(f"Risk Level: {risk}")
+            print(f"Description: {description}")
+            print("-" * 30)
+
+    if not found:
+        print("No open TCP ports detected.")
+
+if __name__ == "__main__":
+    target = input("Enter target IP or domain: ")
+    scan_type = get_scan_type()
+    scan_target(target, scan_type)
