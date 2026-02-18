@@ -5,9 +5,13 @@
 ## Project Features
 
 -Comprehensive Network Scanning – Scan a target IP address or domain to assess network availability.
+
 -Multiple Scan Techniques – Supports SYN, TCP Connect, UDP, and Ping scans for flexible analysis.
+
 -Port and Service Identification – Detects open ports and the services running on them.
+
 -Basic Risk Assessment – Provides risk levels and descriptions for detected services to highlight potential security concerns.
+
 -Interactive Command-Line Interface (CLI) – Simple and user-friendly interface for efficient network auditing.
 
 ## Installation
