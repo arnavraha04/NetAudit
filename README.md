@@ -1,7 +1,8 @@
 **NetAudit**
 
- NetAudit is a network auditing and monitoring tool designed to analyze network security, detect vulnerabilities, and provide detailed insights into connected devices. This project demonstrates hands-on knowledge  of network scanning, auditing, and security best practices.
+ NetAudit is a network auditing and monitoring tool designed to analyze network security, detect vulnerabilities, and provide detailed insights into connected devices. Built using Python, it leverages concepts from tools like Nmap but is designed as a beginner-friendly alternative, providing a simplified interface for learning and performing basic network scans. This project demonstrates hands-on knowledge of network scanning, auditing, and security best practices
 
+ 
 ## Project Features
 
   -Comprehensive Network Scanning – Scan IPs or domains for availability.
@@ -39,14 +40,23 @@
 
 ## Technologies Used
 
--Python 3.x
+   -Python 3.x – Core programming language for the tool.
+   
+   -Socket programming – For network communication and scanning.
+   
+   -Network protocols – TCP, UDP, and ICMP (Ping) used for network analysis.
+   
+   -Libraries:
+   
+   scapy – Packet crafting and network scanning
+   
+   python-nmap – Port scanning and service detection
+   
+   ipaddress – IP address validation and handling
+   
+   requests / CVE APIs – Fetching CVE data for vulnerability analysis
 
--Socket programming
-
--Network protocols (TCP/UDP)
-
--Libraries: scapy, python-nmap
-
+  
 ## Future Improvements
 
   -NetAudit will continue to enhance automation and functionality. Planned improvements include automated vulnerability detection for newly discovered CVEs, the bility to schedule scans and maintain detailed logs, and optional email notifications for critical network events. Exportable reports in HTML format will also be added to make sharing and reviewing scan results easier.
