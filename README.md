@@ -4,15 +4,17 @@
 
 ## Project Features
 
--Comprehensive Network Scanning – Scan a target IP address or domain to assess network availability.
-
--Multiple Scan Techniques – Supports SYN, TCP Connect, UDP, and Ping scans for flexible analysis.
-
--Port and Service Identification – Detects open ports and the services running on them.
-
--Basic Risk Assessment – Provides risk levels and descriptions for detected services to highlight potential security concerns.
-
--Interactive Command-Line Interface (CLI) – Simple and user-friendly interface for efficient network auditing.
+  -Comprehensive Network Scanning – Scan IPs or domains for availability.
+  
+  -IP Validation – Only valid IPs are processed to prevent errors.
+  
+  -Multiple Scan Techniques – Supports SYN, TCP Connect, UDP, and Ping scans.
+  
+  -Port & Service Identification – Detects open ports and running services.
+  
+  -CVE-Based Risk Assessment – Highlights known vulnerabilities for detected services.
+  
+  -Interactive CLI – User-friendly command-line interface for efficient auditing.
 
 ## Installation
 
@@ -47,13 +49,7 @@
 
 ## Future Improvements
 
--Add a GUI for better user experience
-
--Include automated vulnerability detection
-
--Support scheduled audits and logging
-
--Email notifications for network alerts
+  -NetAudit will continue to enhance automation and functionality. Planned improvements include automated vulnerability detection for newly discovered CVEs, the bility to schedule scans and maintain detailed logs, and optional email notifications for critical network events. Exportable reports in HTML format will also be added to make sharing and reviewing scan results easier.
 
 ## Contributing
 
